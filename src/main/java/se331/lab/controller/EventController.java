@@ -19,7 +19,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class EventController {
+public class   EventController {
     //    List<Event> eventList;
 //
 //    @PostConstruct
