@@ -1,4 +1,4 @@
-package se331.lab.entity;
+package se331.rest.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

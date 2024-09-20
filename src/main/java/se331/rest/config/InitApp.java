@@ -1,11 +1,11 @@
-package se331.lab.config;
+package se331.rest.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
-import se331.lab.entity.Event;
-import se331.lab.repository.EventRepository;
+import se331.rest.entity.Event;
+import se331.rest.repository.EventRepository;
 
 @Component
 @RequiredArgsConstructor
