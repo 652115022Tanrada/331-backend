@@ -21,7 +21,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .date("3rd Sept")
                 .time("3.00-4.00 pm.")
                 .petAllowed(false)
-                .organizer("CAMT").build());
+                .build());
         eventRepository.save(Event.builder()
                 .category("Academic")
                 .title("Commencement Day")
@@ -30,7 +30,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .date("21th Jan")
                 .time("8.00am-4.00 pm.")
                 .petAllowed(false)
-                .organizer("CMU").build());
+                .build());
         eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Loy Krathong")
@@ -39,7 +39,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .date("21th Nov")
                 .time("8.00am-10.00 pm.")
                 .petAllowed(false)
-                .organizer("Chiang Mai").build());
+                .build());
         eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Songkran")
@@ -48,6 +48,6 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .date("13th Aprill")
                 .time("10.00am-6.00 pm.")
                 .petAllowed(true)
-                .organizer("Chiang Mai Municipality").build());
+                .build());
     }
 }
