@@ -1,9 +1,11 @@
 package se331.rest.entity;
 
+import ch.qos.logback.classic.spi.LoggingEventVO;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
 import java.util.List;
-import se331.rest.entity.Event;
 
 @Data
 @Builder
@@ -18,5 +20,6 @@ public class Participant {
     String name;
     String telNo;
     @ManyToMany
-    List<Event> eventHistory;
+    @Builder.Default
+    List<Event> eventHistory = new ArrayList<>();
 }
