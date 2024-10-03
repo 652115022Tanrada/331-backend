@@ -1,8 +1,10 @@
 package se331.rest.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
-
+import se331.rest.entity.Organizer;
+import se331.rest.entity.Participant;
 import java.util.List;
 
 @Data
@@ -24,6 +26,7 @@ public class Event {
     Boolean petAllowed;
     @ManyToOne
     Organizer organizer;
+    @JsonManagedReference // Prevents infinite recursion
     @ManyToMany(mappedBy = "eventHistory")
     List<Participant> participants;
 }

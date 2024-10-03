@@ -1,6 +1,8 @@
 package se331.rest.entity;
 
 import ch.qos.logback.classic.spi.LoggingEventVO;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +21,7 @@ public class Participant {
     Long id;
     String name;
     String telNo;
+    @JsonManagedReference // Prevents infinite recursion
     @ManyToMany
     @Builder.Default
     List<Event> eventHistory = new ArrayList<>();
