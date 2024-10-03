@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrganizerOwnEventDTO {
+public class OrganizerOwnEventsDTO {
     Long id;
     String category;
     String title;
