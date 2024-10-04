@@ -107,6 +107,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .build());
         tempEvent.setOrganizer(org2);
         org2.getOwnEvents().add(tempEvent);
+        tempEvent.getParticipants().addAll(List.of(p1,p2,p3));
         p1.getEventHistory().add(tempEvent);  // Patty
         p4.getEventHistory().add(tempEvent);  // Bob
         p5.getEventHistory().add(tempEvent);  // Eve
@@ -123,6 +124,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .build());
         tempEvent.setOrganizer(org3);
         org3.getOwnEvents().add(tempEvent);
+        tempEvent.getParticipants().addAll(List.of(p1,p2,p3));
         p3.getEventHistory().add(tempEvent);  // Alice
         p4.getEventHistory().add(tempEvent);  // Bob
         p5.getEventHistory().add(tempEvent);  // Eve
