@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import se331.rest.entity.Organizer;
 import se331.rest.entity.Participant;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -28,5 +30,6 @@ public class Event {
     Organizer organizer;
     @JsonManagedReference // Prevents infinite recursion
     @ManyToMany(mappedBy = "eventHistory")
-    List<Participant> participants;
+    @Builder.Default
+    List<Participant> participants = new ArrayList<>();
 }

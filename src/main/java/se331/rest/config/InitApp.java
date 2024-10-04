@@ -13,6 +13,8 @@ import se331.rest.repository.EventRepository;
 import se331.rest.repository.OrganizerRepository;
 import se331.rest.repository.ParticipantRepository;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
@@ -72,6 +74,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         tempEvent.setOrganizer(org1);
         org1.getOwnEvents().add(tempEvent);
         // Update participants' event history (owning side)
+        tempEvent.getParticipants().addAll(List.of(p1,p2,p3));
         p1.getEventHistory().add(tempEvent);  // Patty
         p2.getEventHistory().add(tempEvent);  // John
         p3.getEventHistory().add(tempEvent);  // Alice
