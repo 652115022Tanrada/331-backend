@@ -11,9 +11,8 @@ import se331.rest.repository.EventRepository;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("manual")
-
-public class EventDaoDbImpl implements EventDao {
+@Profile("db")
+public class EventDaoImpl implements EventDao {
     final EventRepository eventRepository;
     @Override
     public Integer getEventSize() {
@@ -29,14 +28,14 @@ public class EventDaoDbImpl implements EventDao {
     public Event getEvent(Long id) {
         return eventRepository.findById(id).orElse(null);
     }
+
     @Override
     public Event save(Event event) {
         return eventRepository.save(event);
     }
 
-
     @Override
     public Page<Event> getEvents(String title, Pageable page) {
-        return eventRepository.findByTitleContaining(title,page);
+        return eventRepository.findByTitleContainingOrDescriptionContaining(title,title,page);
     }
 }
